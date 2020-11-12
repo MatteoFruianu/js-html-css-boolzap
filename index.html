@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzap</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
@@ -51,22 +49,15 @@
             </section>
             <section class="contacts p-10">
                 <ul>
-                    <li>
-                        <img src="./img/avatar_1.jpg" alt="">
-                        <span>Michele</span>
+                    
+                    <li v-for="contact in contacts">
+                        
+                <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">    
+                        
+                     {{contact.name}}   
+                        
                     </li>
-                    <li>
-                        <img src="./img/avatar_1.jpg" alt="">
-                        <span>Michele</span>
-                    </li>
-                    <li>
-                        <img src="./img/avatar_1.jpg" alt="">
-                        <span>Michele</span>
-                    </li>
-                    <li>
-                        <img src="./img/avatar_1.jpg" alt="">
-                        <span>Michele</span>
-                    </li>
+                  
                 </ul>
             </section>
         </aside>

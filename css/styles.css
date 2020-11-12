@@ -4,12 +4,15 @@
   box-sizing: border-box;
 }
 
+/* GENERAL STYLE */
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background: linear-gradient(to bottom, #009988 0%, #009988 15%, #d7dbd4 15%,  #d7dbd4 100%);
+  font-size: 14px;
   font-family: sans-serif;
   
 
@@ -27,6 +30,10 @@ img {
   border-radius: 50%;
 }
 
+ul {
+  list-style: none;
+}
+
 /* UTILITIES */
 
 .p-10 {
@@ -41,6 +48,8 @@ img {
   display: flex;
   flex-direction: column;
 }
+
+  /* user style */
 
 .user {
   display: flex;
@@ -66,22 +75,86 @@ img {
   }
 
   .user-right i {
+    font-size: 16px;;
     padding-left: 10px;
   }
 
-
+  /* notifications style */
 
 .notifications {
+  display: flex;
+  align-items: center;
   background: #74dcff;
 }
 
+.notifications-left i {
+  margin-right: 10px;
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  color: #74dcff;
+}
+
+.notifications-right small {
+  text-decoration: underline;
+  color: #437689;
+}
+
+/* search style */
+
 .search {
+  position: relative;
   background: #fafafa;
 }
 
+.search input {
+  font-family: Fontawesome;
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+  
+  padding:10px;
+  border: 1px solid #eceded;
+  border-radius: 5px;
+
+}
+
+.search input:focus {
+ border: 1px solid #caccce ;
+ outline: none;
+}
+
+.search i {
+ position: absolute;
+ top: 50%;
+ right: 10px;
+ transform: translateY(-50%);
+ padding: 0 10px;
+ color:   #caccce;
+}
+
+.search input::placeholder {
+   
+   color: #caccce;  }
+
+
+
+/* CONTACTS STYLE */
+
 .contacts {
-  background: red;
   flex-grow: 1;
+  overflow: auto;
+}
+
+.contacts ul li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.contacts ul li span {
+  margin-left: 10px;
+  
 }
 
 

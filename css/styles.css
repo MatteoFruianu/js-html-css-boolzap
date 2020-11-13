@@ -236,7 +236,7 @@ input::placeholder {
 }
 
 .contact.active {
-  background: red;
+  background: #e1e0e0;
 }
 
 

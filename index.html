@@ -87,10 +87,10 @@
             <section class="header-cont p-10">
                 <div class="header-cont-left">
 
-                    <img src="./img/avatar_1.jpg" alt="">
+                    <img :src="'./img/avatar' + contacts[indexContact].avatar  + '.jpg'" alt="">
 
                     <div class="active-user">
-                        <div> Michele </div>
+                        <div> {{contacts[indexContact].name}} </div>
                         <div><small>Ultimo accesso oggi alle 10.35</small></div>
                     </div>
                     
@@ -106,7 +106,7 @@
             </section>
             <section class="main-cont p-10">
 
-                <div></div>
+                <div>{{contacts[0].name}}</div>
 
             </section>
             <section class="footer-cont p-10">

@@ -93,11 +93,10 @@
             </section>
             <section class="main-cont p-10">
 
-                <div v-for="message in contacts[indexContact]"  class="message">
+                <div v-for="message in contacts[indexContact].messages"  class="message">
 
-                   {{message}}
+                   {{message.message}}
                    
-                   <!-- {{contacts[indexContact].messages[0].message}} -->
 
                 </div>
 

@@ -20,8 +20,9 @@
         <aside class="sidebar">
             <section class="user p-10">
                 <div class="user-left">
-                    <img src="./img/avatar_io.jpg" alt="">
-                    <span>Nome Utente</span>
+                    <img :src="'./img/avatar' + user.avatar + '.jpg'"
+                         :alt="user.name"   > 
+                    <span> {{user.name}} </span>
                 </div>
 
                 <div class="user-right">
@@ -48,17 +49,37 @@
                 <input type="text" placeholder="cerca o inizia una nuova chat" style="font-family:Arial, FontAwesome" />
             </section>
             <section class="contacts p-10">
-                <ul>
-                    
-                    <li v-for="contact in contacts">
+
+                <div v-for="(contact, index) in contacts"
+                 :class="['contact', index === indexContact ? 'active' : ' ']"
+                 @click="setContact(index)">
+                    <div  class="user-contact">
+                        <img
+                        class="avatar"
+                         :src="'./img/avatar' + contact.avatar + '.jpg'" alt="contact.avatar">
+                    </div>
+                    <div class="info">
+                        <span>{{contact.name}}</span>
+                       
+                    </div>
+                </div>
+
+                <!-- <div class="dots">
+                     <i class="fas fa-circle active"></i>
+                    <i class="fas fa-circle"></i>
+                    <i class="fas fa-circle"></i>
+                    <i class="fas fa-circle"></i> -->
+            
+                    <!-- <i v-for="(photo, index) in photos" 
+                        :class="['fas fa-circle',index === indexPhoto ? 'active' : ' ']"
+                        @click="setPhoto(index)"
                         
-                <img :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">    
-                        
-                     {{contact.name}}   
-                        
-                    </li>
-                  
-                </ul>
+                         ></i>
+            
+                   </div> -->
+
+               
+
             </section>
         </aside>
 
@@ -68,9 +89,9 @@
 
                     <img src="./img/avatar_1.jpg" alt="">
 
-                    <div class="name-access">
-                        <div>Michele</div>
-                        <div><small>Ultimo accesso oggi alle 10.45</small></div>
+                    <div class="active-user">
+                        <div> Michele </div>
+                        <div><small>Ultimo accesso oggi alle 10.35</small></div>
                     </div>
                     
                 </div>
@@ -84,6 +105,8 @@
                 </div>
             </section>
             <section class="main-cont p-10">
+
+                <div></div>
 
             </section>
             <section class="footer-cont p-10">

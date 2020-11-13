@@ -44,9 +44,8 @@
 
             </section>
             <section class="search p-10">
-                <div><i class="fas fa-search"></i></div>
-                
-                <input type="text" placeholder="cerca o inizia una nuova chat" style="font-family:Arial, FontAwesome" />
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="cerca o inizia una nuova chat" style="font-family:Arial, FontAwesome" />
             </section>
             <section class="contacts p-10">
 
@@ -64,19 +63,7 @@
                     </div>
                 </div>
 
-                <!-- <div class="dots">
-                     <i class="fas fa-circle active"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i>
-                    <i class="fas fa-circle"></i> -->
-            
-                    <!-- <i v-for="(photo, index) in photos" 
-                        :class="['fas fa-circle',index === indexPhoto ? 'active' : ' ']"
-                        @click="setPhoto(index)"
-                        
-                         ></i>
-            
-                   </div> -->
+              
 
                
 
@@ -106,7 +93,15 @@
             </section>
             <section class="main-cont p-10">
 
-                <div>{{contacts[0].name}}</div>
+                <div v-for="message in contacts[indexContact]"  class="message">
+
+                   {{message}}
+                   
+                   <!-- {{contacts[indexContact].messages[0].message}} -->
+
+                </div>
+
+                    
 
             </section>
             <section class="footer-cont p-10">

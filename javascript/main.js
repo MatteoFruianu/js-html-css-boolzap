@@ -108,11 +108,40 @@ var app = new Vue({
             this.indexContact = index
         },
 
+  
+
     addNewMessage() {
 
-      this.contacts[this.indexContact].messages.push({message: this.newMessage, date: 'oggi', status: 'sent'}) 
+        if (this.newMessage.trim() !== '') {
 
-    }   
+            this.contacts[this.indexContact].messages.push({message: this.newMessage, date: 'oggi', status: 'sent'})
+
+        }  
+
+
+        setTimeout(this.addAnswer, 1000)
+
+        this.newMessage = '';
+
+   
+    },
+
+    addAnswer() {
+
+      this.contacts[this.indexContact].messages.push({message: 'ok', date: 'oggi', status: 'received'})
+
+
+    }
+
+
+
+    
+    
+
+      
+
+
+
 
     }
 });

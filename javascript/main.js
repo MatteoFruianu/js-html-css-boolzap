@@ -11,6 +11,9 @@ var app = new Vue({
         },
 
         indexContact: 0,
+
+        newMessage: ' ',
+        
         // Elenco contatti
         contacts: [
             {
@@ -96,13 +99,20 @@ var app = new Vue({
                     }
                 ],
             },
+            
         ]
     },
     methods: {
 
         setContact(index) {
             this.indexContact = index
-        }
+        },
+
+    addNewMessage() {
+
+      this.contacts[this.indexContact].messages.push({message: this.newMessage, date: 'oggi', status: 'sent'}) 
+
+    }   
 
     }
 });

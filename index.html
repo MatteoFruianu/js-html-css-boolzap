@@ -91,11 +91,26 @@
 
                 </div>
             </section>
-            <section class="main-cont p-10">
+            <section class="main-cont">
 
-                <div v-for="message in contacts[indexContact].messages"  class="message">
+                <div v-for="message in contacts[indexContact].messages"  class="messages">
 
-                   {{message.message}}
+                    <div v-if="message.status === 'sent'" class="sent">
+                        <div class="text">{{message.message}}</div>
+                        <div class="date">{{message.date}}</div>
+                        
+                        
+                    </div>
+
+                    <div v-else class="received">
+                        <div class="text">{{message.message}}</div>
+                        <div class="date">{{message.date}}</div>
+                    </div>
+                    
+
+                   
+                   <!-- {{message.date}}
+                   {{message.status}} -->
                    
 
                 </div>

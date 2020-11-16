@@ -13,6 +13,8 @@ var app = new Vue({
         indexContact: 0,
 
         newMessage: ' ',
+
+        realTime: dayjs().format('DD/MM/YYYY HH:mm:ss'),
         
         // Elenco contatti
         contacts: [
@@ -114,12 +116,12 @@ var app = new Vue({
 
         if (this.newMessage.trim() !== '') {
 
-            this.contacts[this.indexContact].messages.push({message: this.newMessage, date: 'oggi', status: 'sent'})
+            this.contacts[this.indexContact].messages.push({message: this.newMessage, date: this.realTime, status: 'sent'})
 
         }  
 
 
-        setTimeout(this.addAnswer, 1000)
+        setTimeout(this.addAnswer, 3000)
 
         this.newMessage = '';
 
@@ -128,17 +130,10 @@ var app = new Vue({
 
     addAnswer() {
 
-      this.contacts[this.indexContact].messages.push({message: 'ok', date: 'oggi', status: 'received'})
+      this.contacts[this.indexContact].messages.push({message: 'ok', date: this.realTime, status: 'received'})
 
 
     }
-
-
-
-    
-    
-
-      
 
 
 

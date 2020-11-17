@@ -14,7 +14,6 @@ var app = new Vue({
 
         newMessage: ' ',
 
-
         
         // Elenco contatti
         contacts: [
@@ -209,7 +208,6 @@ var app = new Vue({
    
     },
 
-   
 
     }
 });

@@ -14,7 +14,7 @@ var app = new Vue({
 
         newMessage: ' ',
 
-        realTime: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+
         
         // Elenco contatti
         contacts: [
@@ -101,6 +101,78 @@ var app = new Vue({
                     }
                 ],
             },
+
+            {
+                name: 'Roberto',
+                avatar: '_5',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Stasera calcetto alle 20?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Ok, ci sono!',
+                        status: 'received'
+                    }
+                ],
+            },
+
+            {
+                name: 'Gianni',
+                avatar: '_6',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Come si chiama il film che abbiamo visto domenica scorsa?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Sorry we missed you',
+                        status: 'received'
+                    }
+                ],
+            },
+
+            {
+                name: 'Antonio',
+                avatar: '_7',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Hai fatto gli esercizi?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Si ma non tutti',
+                        status: 'received'
+                    }
+                ],
+            },
+
+            {
+                name: 'Luca',
+                avatar: '_8',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Il cantiere procede bene?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Dobbiamo intonacare!',
+                        status: 'received'
+                    }
+                ],
+            },
             
         ]
     },
@@ -110,33 +182,34 @@ var app = new Vue({
             this.indexContact = index
         },
 
-  
+         addNewMessage() {
 
-    addNewMessage() {
+            const activeMessage = this.contacts[this.indexContact].messages;
 
         if (this.newMessage.trim() !== '') {
 
-            this.contacts[this.indexContact].messages.push({message: this.newMessage, date: this.realTime, status: 'sent'})
+            
+
+            activeMessage.push({
+                message: this.newMessage, 
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'), 
+                status: 'sent'});
 
         }  
 
+        setTimeout(() => { 
+            activeMessage.push({
+                message: 'ok', 
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'), 
+                status: 'received'});
+         }, 1000);
 
-        setTimeout(this.addAnswer, 3000)
 
         this.newMessage = '';
-
    
     },
 
-    addAnswer() {
-
-      this.contacts[this.indexContact].messages.push({message: 'ok', date: this.realTime, status: 'received'})
-
-
-    }
-
-
-
+   
 
     }
 });

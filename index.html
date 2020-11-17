@@ -45,11 +45,14 @@
             </section>
             <section class="search p-10">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="cerca o inizia una nuova chat"/>
+                    <input type="text"
+                           @keyup="selectContact"
+                           placeholder="cerca o inizia una nuova chat"/>
             </section>
             <section class="contacts p-10">
 
-                <div v-for="(contact, index) in contacts"
+                <div 
+                v-for="(contact, index) in contacts"
                  :class="['contact', index === indexContact ? 'active' : ' ']"
                  @click="setContact(index)">
                     <div  class="user-contact">
@@ -78,7 +81,7 @@
 
                     <div class="active-user">
                         <div> {{contacts[indexContact].name}} </div>
-                        <div><small>Ultimo accesso oggi alle 10.35</small></div>
+                        <div><small>{{ methods }}</small></div>
                     </div>
                     
                 </div>
@@ -128,7 +131,7 @@
 
     </div>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/dayjs.min.js"></script> 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/dayjs.min.js"></script> 
     <script src="./javascript/main.js"></script>
 </body>
 </html>
